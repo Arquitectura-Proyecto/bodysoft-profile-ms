@@ -3,12 +3,12 @@ from django.db import models
 
 
 class User(models.Model):
-    user_id = models.CharField(primary_key=True, max_length=30)
-    username = models.CharField(max_length=60)
+    user_id = models.IntegerField(primary_key=True)
+    user_name = models.CharField(max_length=60)
     age = models.IntegerField()
-    photo = models.CharField(max_length=30)
-    telephone = models.IntegerField()
+    photo = models.CharField(max_length=60)
+    telephone = models.CharField(max_length=10)
     city = models.CharField(max_length=30)
 
     def __str__(self):
-        return self.username
+        return self.user_name

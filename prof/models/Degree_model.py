@@ -4,11 +4,11 @@ from .Trainer_model import Trainer
 
 
 class Degree(models.Model):
-    degree_id = models.CharField(primary_key=True, max_length=30)
+    degree_id = models.IntegerField(primary_key=True)
     degree_name = models.CharField(max_length=60)
     year = models.IntegerField()
-    institution = models.CharField(max_length=60)
-    trainer_id = models.ForeignKey(Trainer, on_delete=models.CASCADE, db_column="trainer_id")
+    institution = models.CharField(max_length=60, )
+    trainer = models.ForeignKey(Trainer, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.username
+        return self.user_name
