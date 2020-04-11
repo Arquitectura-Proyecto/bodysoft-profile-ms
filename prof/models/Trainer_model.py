@@ -15,7 +15,10 @@ class Trainer(models.Model):
     description = models.TextField()
     work_experience = models.CharField(max_length=60)
     resources = models.TextField()
-    specialities = models.ManyToManyField(Speciality)
+    specialities = models.ManyToManyField(Speciality, through="Trainer_speciality")
 
     def __str__(self):
         return self.trainer_name
+
+
+

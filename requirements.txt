@@ -1,3 +1,4 @@
+requests
 django-filter
 djangorestframework
 Django>=2.0,<3.0

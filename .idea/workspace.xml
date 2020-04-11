@@ -2,25 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a87848a3-2be5-4786-82cf-3c6955471b84" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/prof/migrations/0002_auto_20200407_1915.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prof/migrations/0003_speciality_trainers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prof/migrations/0004_auto_20200407_1933.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prof/migrations/0005_auto_20200407_1949.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prof/models/Speciality_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prof/serializers/Speciality_serializer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prof/views/Speciality_ViewSet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prof/models/Trainer_speciality_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prof/serializers/Trainer_speciality_serializer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prof/views/Trainer_speciality_ViewSet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bs/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/bs/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prof/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prof/models/Degree_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/models/Degree_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prof/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prof/migrations/0002_auto_20200407_1915.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prof/migrations/0003_speciality_trainers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prof/migrations/0004_auto_20200407_1933.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prof/migrations/0005_auto_20200407_1949.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/prof/models/Trainer_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/models/Trainer_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prof/serializers/Degree_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/serializers/Degree_serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prof/serializers/Speciality_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/serializers/Speciality_serializer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prof/serializers/Trainer_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/serializers/Trainer_serializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prof/serializers/User_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/serializers/User_serializer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prof/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prof/views/Degree_ViewSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/views/Degree_ViewSet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prof/views/Speciality_ViewSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/views/Speciality_ViewSet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prof/views/Trainer_ViewSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/views/Trainer_ViewSet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prof/views/User_ViewSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/views/User_ViewSet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,6 +96,11 @@
           <url>file://$PROJECT_DIR$/prof/views/User_ViewSet.py</url>
           <line>3</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/prof/views/Speciality_ViewSet.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

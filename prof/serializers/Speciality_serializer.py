@@ -5,7 +5,8 @@ from ..models.Speciality_model import Speciality
 
 
 class SpecialitySerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Speciality
-        fields = ('speciality_id', 'speciality_name',)
+        fields = ('speciality_id', 'speciality_name', )
 
