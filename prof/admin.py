@@ -6,9 +6,3 @@ from .models.Speciality_model import Speciality
 from .models.Trainer_speciality_model import Trainer_speciality
 
 
-admin.site.register(User)
-admin.site.register(Trainer)
-admin.site.register(Degree)
-admin.site.register(Speciality)
-admin.site.register(Trainer_speciality)
-
