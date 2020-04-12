@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a87848a3-2be5-4786-82cf-3c6955471b84" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bs/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/bs/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bs/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bs/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prof/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/prof/serializers/Degree_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/serializers/Degree_serializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prof/serializers/Trainer_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/serializers/Trainer_serializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prof/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prof/views/Degree_ViewSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/views/Degree_ViewSet.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
