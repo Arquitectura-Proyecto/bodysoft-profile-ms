@@ -1,0 +1,848 @@
+swagger: '1.0'
+info:
+  version: 1.0.0
+  title: Microservice for Profile management
+  description: Python + PostgreSQL
+  license:
+    name: 'BodySoft, 2020-I'
+host: 'local:8000'
+basePath: /bs-profile-ms/
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /users:
+    post:
+      summary: Creates a new user
+      operationId: createUser
+      parameters:
+        - name: user
+          in: body
+          required: true
+          description: User Object
+          schema:
+            $ref: '#/definitions/UserInput'
+      responses:
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+    get:
+      summary: Returns all users
+      operationId: listUser
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/UsersList'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+  '/users/{id}':
+    get:
+      summary: Returns an user with the given id
+      operationId: retrieveUser
+      parameters:
+        - name: id
+          in: path
+          description: The id of the user to be returned
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/User'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+    put:
+      summary: Updates an user with the given id
+      operationId: updateUser
+      parameters:
+        - name: id
+          in: path
+          description: The id of the user to be updated
+          required: true
+          type: integer
+        - name: user
+          in: body
+          required: true
+          description: User Object
+          schema:
+            $ref: '#/definitions/UserInput'
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+    delete:
+      summary: Deletes an user with the given id
+      operationId: destroyUser
+      parameters:
+        - name: id
+          in: path
+          description: The id of the user to be deleted
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Ok
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+  /degrees:
+    post:
+      summary: Creates a new degree
+      operationId: createDegree
+      parameters:
+        - name: degree
+          in: body
+          required: true
+          description: Degree Object
+          schema:
+            $ref: '#/definitions/DegreeInput'
+      responses:
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+    get:
+      summary: Returns all degrees
+      operationId: listDegrees
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/DegreesList'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+  /degrees/degrees_by_trainer/:
+    get:
+      summary: Returns all degrees of a trainer
+      operationId: degrees_by_trainer
+      parameters:
+        - name: trainer
+          in: path
+          description: The id of the trainer
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/DegreesList'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+  '/degrees/{id}':
+    get:
+      summary: Returns an degree with the given id
+      operationId: retrieveDegree
+      parameters:
+        - name: id
+          in: path
+          description: The id of the degree to be returned
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/Degree'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+    put:
+      summary: Updates an degree with the given id
+      operationId: updateDegree
+      parameters:
+        - name: id
+          in: path
+          description: The id of the degree to be updated
+          required: true
+          type: integer
+        - name: degree
+          in: body
+          required: true
+          description: Degree Object
+          schema:
+            $ref: '#/definitions/DegreeWithoutTrainerInput'
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+    delete:
+      summary: Deletes an degree with the given id
+      operationId: destroyDegree
+      parameters:
+        - name: id
+          in: path
+          description: The id of the degree to be deleted
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Ok
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+  /specialities:
+    post:
+      summary: Creates a new speciality
+      operationId: createSpeciality
+      parameters:
+        - name: speciality
+          in: body
+          required: true
+          description: Speciality Object
+          schema:
+            $ref: '#/definitions/SpecialityInput'
+      responses:
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+    get:
+      summary: Returns all specialities
+      operationId: listSpecialities
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/SpecialitiesList'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+  '/specialities/{id}':
+    get:
+      summary: Returns a speciality with the given id
+      operationId: retrieveSpeciality
+      parameters:
+        - name: id
+          in: path
+          description: The id of the speciality to be returned
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/Speciality'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+    put:
+      summary: Updates a speciality with the given id
+      operationId: updateSpeciality
+      parameters:
+        - name: id
+          in: path
+          description: The id of the speciality to be updated
+          required: true
+          type: integer
+        - name: speciality
+          in: body
+          required: true
+          description: Speciality Object
+          schema:
+            $ref: '#/definitions/SpecialityInput'
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+    delete:
+      summary: Deletes a speciality with the given id
+      operationId: destroySpeciality
+      parameters:
+        - name: id
+          in: path
+          description: The id of the speciality to be deleted
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Ok
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+  /trainerSpecialities:
+    post:
+      summary: Creates a new trainer_speciality
+      operationId: createTrainerSpecialities
+      parameters:
+        - name: Trainer_speciality
+          in: body
+          required: true
+          description: Trainer_speciality Object
+          schema:
+            $ref: '#/definitions/Trainer_specialityInput'
+      responses:
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+    get:
+      summary: Returns all Trainer_speciality
+      operationId: listTrainer_speciality
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/Trainer_specialityList'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+  /trainer-specialities/get_trainerspeciality:
+    get:
+      summary: Returns a Trainer_speciality with the given trainer and speciality
+      operationId: listaTrainer_speciality
+      parameters:
+        - name: trainer
+          in: path
+          description: The id of the trainer
+          required: true
+          type: integer
+        - name: speciality
+          in: path
+          description: The id of the speciality
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/Trainer_specialityList'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+  /trainer-specialities/delete_trainerspeciality:
+    delete:
+      summary: Deletes a Trainer_speciality with the given trainer and speciality
+      operationId: destroyTrainer_speciality
+      parameters:
+        - name: trainer
+          in: path
+          description: The id of the trainer
+          required: true
+          type: integer
+        - name: speciality
+          in: path
+          description: The id of the speciality
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Ok
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+  /trainers:
+    post:
+      summary: Creates a new trainer
+      operationId: createTrainer
+      parameters:
+        - name: trainer
+          in: body
+          required: true
+          description: Trainer Object
+          schema:
+            $ref: '#/definitions/TrainerInput'
+      responses:
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+    get:
+      summary: Returns all trainers
+      operationId: listTrainers
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/TrainersList'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+  /trainers/trainers_by_speciality:
+    get:
+      summary: Returns all trainers by the given speciality id
+      operationId: listTrainersbySpeciality
+      parameters:
+        - name: specialities
+          in: path
+          description: The speciality id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/TrainersList'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+  '/trainers/{id}':
+    get:
+      summary: Returns a trainer with the given id
+      operationId: retrieveTrainer
+      parameters:
+        - name: id
+          in: path
+          description: The id of the trainer to be returned
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Ok
+          schema:
+            $ref: '#/definitions/Trainer'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+    put:
+      summary: Updates a trainer with the given id
+      operationId: updateTrainer
+      parameters:
+        - name: id
+          in: path
+          description: The id of the trainer to be updated
+          required: true
+          type: integer
+        - name: trainer
+          in: body
+          required: true
+          description: Trainer Object
+          schema:
+            $ref: '#/definitions/TrainerInput'
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+    delete:
+      summary: Deletes a trainer with the given id
+      operationId: destroyTrainer
+      parameters:
+        - name: id
+          in: path
+          description: The id of the trainer to be deleted
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Ok
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '406':
+          description: Not Acceptable (Invalid Params)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/ErrorModel'
+definitions:
+  User:
+    type: object
+    properties:
+      user_id:
+        type: integer
+      user_name:
+        type: string
+      age:
+        type: integer
+      photo:
+        type: string
+      telephone:
+        type: string
+      city:
+        type: string
+  UserInput:
+    type: object
+    properties:
+      user_id:
+        type: integer
+      user_name:
+        type: string
+      age:
+        type: integer
+      photo:
+        type: string
+      telephone:
+        type: string
+      city:
+        type: string
+  UsersList:
+    type: object
+    required:
+      - total
+      - list
+    properties:
+      total:
+        type: number
+      list:
+        type: array
+        items:
+          $ref: '#/definitions/User'
+  Degree:
+    type: object
+    properties:
+      degree_id:
+        type: integer
+      degree_name:
+        type: string
+      year:
+        type: integer
+      institution:
+        type: string
+      trainer:
+        type: object
+  DegreeInput:
+    type: object
+    properties:
+      degree_name:
+        type: string
+      year:
+        type: integer
+      institution:
+        type: string
+      trainer:
+        type: object
+  DegreeWithoutTrainerInput:
+    type: object
+    properties:
+      degree_name:
+        type: string
+      year:
+        type: integer
+      institution:
+        type: string
+  DegreesList:
+    type: object
+    required:
+      - total
+      - list
+    properties:
+      total:
+        type: number
+      list:
+        type: array
+        items:
+          $ref: '#/definitions/Degree'
+  Speciality:
+    type: object
+    properties:
+      speciality_id:
+        type: integer
+      speciality_name:
+        type: string
+  SpecialityInput:
+    type: object
+    properties:
+      speciality_name:
+        type: string
+  SpecialitiesList:
+    type: object
+    required:
+      - total
+      - list
+    properties:
+      total:
+        type: number
+      list:
+        type: array
+        items:
+          $ref: '#/definitions/Speciality'
+  Trainer_speciality:
+    type: object
+    properties:
+      trainer:
+        type: integer
+      speciality:
+        type: string
+  Trainer_specialityInput:
+    type: object
+    properties:
+      trainer:
+        type: integer
+      speciality:
+        type: string
+  Trainer_specialityList:
+    type: object
+    required:
+      - total
+      - list
+    properties:
+      total:
+        type: number
+      list:
+        type: array
+        items:
+          $ref: '#/definitions/Speciality'
+  Trainer:
+    type: object
+    properties:
+      trainer_id:
+        type: integer
+      trainer_name:
+        type: string
+      age:
+        type: integer
+      photo:
+        type: string
+      telephone:
+        type: string
+      city:
+        type: string
+      sum_ratings:
+        type: integer
+      num_ratings:
+        type: integer
+      description:
+        type: string
+      work_experience:
+        type: string
+      resources:
+        type: string
+      specialities:
+        type: object
+  TrainerInput:
+    type: object
+    properties:
+      trainer_id:
+        type: integer
+      trainer_name:
+        type: string
+      age:
+        type: integer
+      photo:
+        type: string
+      telephone:
+        type: string
+      city:
+        type: string
+      sum_ratings:
+        type: integer
+      num_ratings:
+        type: integer
+      description:
+        type: string
+      work_experience:
+        type: string
+      resources:
+        type: string
+  TrainersList:
+    type: object
+    required:
+      - total
+      - list
+    properties:
+      total:
+        type: number
+      list:
+        type: array
+        items:
+          $ref: '#/definitions/Trainer'
+  ErrorModel:
+    type: object
+    required:
+      - message
+      - code
+    properties:
+      message:
+        type: string
+      code:
+        type: number
+      description:
+        type: object
