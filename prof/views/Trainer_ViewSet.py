@@ -12,14 +12,7 @@ from ..serializers.Trainer_serializer import TrainerSerializer
 class TrainerViewSet(viewsets.ModelViewSet):
     queryset = Trainer.objects.all().order_by('trainer_name')
     serializer_class = TrainerSerializer
-    lookup_field = 'specialities'
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        queryset = queryset.prefetch_related(
-            Prefetch('specialities')
-        )
-        return queryset
 
     @action(detail=False)
     def trainers_by_speciality(self, request):
