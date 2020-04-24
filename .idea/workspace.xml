@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a87848a3-2be5-4786-82cf-3c6955471b84" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/prof/migrations/0002_auto_20200424_1517.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prof/migrations/0003_auto_20200424_1523.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prof/serializers/Degree_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/serializers/Degree_serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prof/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prof/models/Speciality_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/models/Speciality_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prof/models/Trainer_speciality_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/prof/models/Trainer_speciality_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +36,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/prof" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">

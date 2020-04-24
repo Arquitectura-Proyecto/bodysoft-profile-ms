@@ -5,6 +5,8 @@ from .Speciality_model import Speciality
 
 
 class Trainer_speciality(models.Model):
+    class Meta:
+        unique_together = (('trainer', 'speciality'),)
 
     trainer = models.ForeignKey(Trainer, on_delete=models.CASCADE)
     speciality = models.ForeignKey(Speciality, on_delete=models.CASCADE)
