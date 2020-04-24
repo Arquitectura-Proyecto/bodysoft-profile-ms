@@ -30,6 +30,9 @@ class TrainerSpecialityViewSet(viewsets.ModelViewSet):
         speciality = request.query_params.get('speciality', None)
         if trainer and trainer is not None:
             queryset = queryset.filter(trainer=trainer, speciality=speciality)
-            queryset.delete()
-            return Response(status=status.HTTP_200_OK)
+            if len(queryset) == 0:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+            else:
+                queryset.delete()
+                return Response(status=status.HTTP_200_OK)
         return Response(status=status.HTTP_404_NOT_FOUND)
