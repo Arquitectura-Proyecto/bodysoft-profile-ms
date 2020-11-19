@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -79,9 +78,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'bs-profile-db',
-        'USER': 'postgres',
-        'HOST': 'db',
-        'PORT': 5432,
+        'USER': os.environ.get('DB_USER', 'postgres'),
+        'HOST': os.environ.get('DB_HOST', 'd2b'),
+        'PORT': os.environ.get('DB_PORT', '54432'),
     }
 }
 
